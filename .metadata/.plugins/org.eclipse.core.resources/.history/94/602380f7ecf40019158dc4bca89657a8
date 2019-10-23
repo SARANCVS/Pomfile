@@ -1,0 +1,48 @@
+package cvs.all.revision;
+
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Pojologinclass extends Baseclass{
+	
+	public Pojologinclass() {
+		
+		PageFactory.initElements(driver, this);
+	}
+	
+	@FindBy(id="username")
+	private List<WebElement> UserName;
+	
+	@FindBy(id="password")
+	private List<WebElement> password;
+	
+	@FindBy(id="login")
+	private List<WebElement> Click;
+	
+	@FindBy(xpath="//a[@href='ForgotPassword.php']")
+	private List<WebElement> Click2;
+
+	public List<WebElement> getUserName() {
+		return UserName;
+	}
+
+	public List<WebElement> getPassword() {
+		return password;
+	}
+
+	public List<WebElement> getClick() {
+		return Click;
+	}
+	public List<WebElement> getClick2() {
+		return Click2;
+	}
+	
+	
+	
+	
+	
+
+}

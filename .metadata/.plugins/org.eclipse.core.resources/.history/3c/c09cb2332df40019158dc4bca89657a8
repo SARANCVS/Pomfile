@@ -1,0 +1,9 @@
+package cvs.all.revision;
+
+public class Run extends Baseclass{
+	public static void main(String[] args) {
+		getdriver();
+		loadUrl("https://adactin.com/HotelApp/Register.php");
+	}
+
+}

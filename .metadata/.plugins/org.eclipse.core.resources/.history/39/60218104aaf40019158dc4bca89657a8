@@ -1,0 +1,104 @@
+package cvs.all.revision;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class Run extends Baseclass {
+	
+	
+	@BeforeClass
+	public void start() {
+		getdriver();
+		loadUrl("https://adactin.com/HotelApp/index.php");
+	}
+	
+	@BeforeMethod
+	public void TimeStart() {
+		Date d=new Date();
+		System.out.println(d);
+
+	}
+	
+	
+	@AfterMethod
+	public void Timeend() {
+		Date d=new Date();
+		System.out.println(d);
+
+	}
+	
+	
+	
+	@Test
+
+	public static void Basic() throws IOException {
+
+		
+		String currentUrl = driver.getCurrentUrl();
+		System.out.println(currentUrl);
+		String title = driver.getTitle();
+
+		System.out.println(title);
+
+		TakesScreenshot scn = ((TakesScreenshot) driver);
+
+		File soc = scn.getScreenshotAs(OutputType.FILE);
+
+		File dse = new File("C:\\Users\\Hemanathan\\Desktop\\maven\\sn.png");
+
+		FileUtils.copyFile(soc, dse);
+
+	}
+
+	@Test
+
+	public void login() {
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+		Pojologinclass L = new Pojologinclass();
+
+		EnterText(L.getUserName().get(0), "saran");
+
+		EnterText(L.getPassword().get(0), "13412");
+
+		clickbtn(L.getClick().get(0));
+	}
+	
+
+	  //Registration
+
+	
+	  @Test
+	  
+	  public void Registration() {
+		 
+	  
+	  RegistrationForm r= new RegistrationForm();
+	  
+	 EnterText(r.getUserName().get(0), "raja");
+	 
+	 EnterText(r.getPassword().get(0), "12345");
+	 
+	 EnterText(r.getConformpassword().get(0), "12345");
+	 
+	 EnterText(r.getName().get(0),"raj");
+	 
+	 
+	 EnterText(r.getEmail().get(0), "raja@gmail.com");
+	 
+	 EnterText(r.getCaptcha().get(0), "reside");
+	 
+
+}
+}

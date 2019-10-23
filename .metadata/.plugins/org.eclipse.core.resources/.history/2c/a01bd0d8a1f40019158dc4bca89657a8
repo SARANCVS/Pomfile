@@ -1,0 +1,42 @@
+package cvs.all.revision;
+
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Pojologinclass extends Baseclass{
+	
+	public Pojologinclass() {
+		
+		PageFactory.initElements(driver, this);
+	}
+	
+	@FindBy(id="username")
+	private List<WebElement> UserName;
+	
+	@FindBy(id="password")
+	private List<WebElement> password;
+	
+	@FindBy(id="login")
+	private List<WebElement> btnClick;
+
+	public WebElement getUserName() {
+		
+		return UserName.get(0);
+	}
+
+	public WebElement getPassword() {
+		return password.get(0);
+	}
+
+	public List<WebElement> getClick() {
+		return btnClick;
+	}
+	
+	
+	
+	
+
+}

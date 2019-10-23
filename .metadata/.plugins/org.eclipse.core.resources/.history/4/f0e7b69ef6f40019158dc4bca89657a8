@@ -1,0 +1,77 @@
+package cvs.all.revision;
+
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class RegistrationForm extends Baseclass{
+	
+	public RegistrationForm() {
+		PageFactory.initElements(driver, this);
+	}
+	
+	@FindBy(xpath="//input[@class='reg_input']")
+	private List<WebElement> UserName1;
+	
+	@FindBy(id="password")
+	private List<WebElement> password1;
+	
+	@FindBy(id="re_password")
+	private List<WebElement> Conformpassword;
+	
+	@FindBy(id="full_name")
+	private List<WebElement> Name;
+	
+	@FindBy(id="email_add")
+	private List<WebElement> Email;
+	
+	@FindBy(id="captcha-form")
+	private List<WebElement> Captcha;
+	
+	@FindBy(id="tnc_box")
+	private List<WebElement> Ckbox;
+	
+	@FindBy(id="Submit")
+	private List<WebElement> Register;
+
+	public List<WebElement> getUserName1() {
+		return UserName1;
+	}
+
+	public List<WebElement> getPassword1() {
+		return password1;
+	}
+
+	public List<WebElement> getConformpassword() {
+		return Conformpassword;
+	}
+
+	public List<WebElement> getName() {
+		return Name;
+	}
+
+	public List<WebElement> getEmail() {
+		return Email;
+	}
+
+	public List<WebElement> getCaptcha() {
+		return Captcha;
+	}
+
+	public List<WebElement> getCkbox() {
+		return Ckbox;
+	}
+
+	public List<WebElement> getRegister() {
+		return Register;
+	}
+	
+	
+	
+
+	
+	
+
+}

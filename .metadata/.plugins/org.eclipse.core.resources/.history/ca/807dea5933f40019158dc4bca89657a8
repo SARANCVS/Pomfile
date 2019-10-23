@@ -1,0 +1,36 @@
+package cvs.all.revision;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Baseclass {
+		public static WebDriver driver;
+
+		public static WebDriver getdriver() {
+			System.setProperty("webdriver.chrome.driver",
+					"C:\\Users\\Hemanathan\\Desktop\\saran\\SeleniumTest\\driver\\chromedriver.exe");
+			driver = new ChromeDriver();
+
+			return driver;
+
+		}
+
+		public static void loadUrl(String url) {
+
+			driver.get(url);
+		}
+		
+		public static void EnterText(WebElement e,String value) {
+			
+			e.sendKeys(value);
+			
+
+		}
+		public static void click(WebElement e) {
+           e.click();
+		}
+	
+	
+
+}
